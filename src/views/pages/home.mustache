@@ -1,0 +1,24 @@
+{{>partials/header}}
+<fieldset>
+    <legend>Adicionar Novo Usuário</legend>
+    <form action="/cadastrarusuario" method="POST">
+        <input type="text" name="firstName" placeholder="Digite seu nome" required><br><br>
+        <input type="text" name="lastName" placeholder="Digite seu sobrenome"><br><br>
+        <input type="email" name="email" placeholder="Digite seu e-mail" required><br><br>
+        <input type="number" name="age" placeholder="Digite sua idade atual" required><br><br>
+        <input type="text" name="interests" placeholder="Digite seus interesses, separado!"><br><br>
+        <button type="submit">Inserir</button>
+    </form>
+</fieldset>
+
+<h2>Usuários:</h2>
+<ul>
+    {{#usuarios}}
+        <li>{{name.firstName}} » {{age}} anos</li>
+    {{/usuarios}}
+    {{^usuarios}}
+        Nenhum usuário encontrado no banco de dados
+    {{/usuarios}}
+</ul>
+
+{{>partials/footer}}
