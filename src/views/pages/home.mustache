@@ -14,7 +14,7 @@
 <h2>Usuários:</h2>
 <ul>
     {{#usuarios}}
-        <li>{{name.firstName}} » {{age}} anos</li>
+        <li>{{name.firstName}} » {{age}} anos ::: <a href = "/usuario/{{_id}}/addIdade"> Adicione +1 ano de vida</a></li>
     {{/usuarios}}
     {{^usuarios}}
         Nenhum usuário encontrado no banco de dados

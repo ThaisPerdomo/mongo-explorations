@@ -13,7 +13,7 @@ export const home = async (req: Request, res: Response) => {
 };
 
 export const createUser = async (req: Request, res: Response) => {
-
+    
     let {email, age, interests, firstName, lastName} = req.body as any;
 
     interests.split(',');
@@ -34,4 +34,19 @@ export const createUser = async (req: Request, res: Response) => {
     res.redirect('/');
 };
 
-//
+export const addAge = async (req: Request, res: Response) => {
+
+    let id = req.params.id;
+
+    let usuarioAlterado = await User.findById(id);
+
+    if (usuarioAlterado){
+        usuarioAlterado.age = usuarioAlterado.age + 1;
+        await usuarioAlterado.save();
+    }
+
+    console.log("Id: ", id);
+
+    res.redirect('/');
+
+};

@@ -12,5 +12,6 @@ const router = Router();
 router.get('/', pageController.home);
 
 router.post('/cadastrarusuario', pageController.createUser);
+router.get('/usuario/:id/addidade', pageController.addAge);
 
 export default router;
